@@ -1,0 +1,389 @@
+# .gitattributes
+# vim: ft=gitattributes
+
+# git attributes macros
+# =====================
+
+# Verify settings using: 'git check-attr --all -- <pathname>'
+
+# [attr]binary -diff -merge -text
+[attr]lfs diff=lfs filter=lfs merge=lfs -text
+
+[attr]prose-md text eol=lf diff=markdown whitespace=blank-at-eof,-blank-at-eol,tab-in-indent
+[attr]prose-po text eol=lf whitespace=tab-in-indent,trailing-space
+[attr]prose-rst text eol=lf whitespace=tab-in-indent,trailing-space
+[attr]prose-txt text eol=lf whitespace=tabwidth=4,trailing-space
+
+[attr]spaces-2 text eol=lf whitespace=space-before-tab,tabs-in-indent,tabwidth=2,trailing-space
+[attr]spaces-4 text eol=lf whitespace=space-before-tab,tabs-in-indent,tabwidth=4,trailing-space
+[attr]spaces-8 text eol=lf whitespace=space-before-tab,tabs-in-indent,tabwidth=8,trailing-space
+
+[attr]tabs-2 text eol=lf whitespace=indent-with-non-tab,space-before-tab,tabwidth=2,trailing-space
+[attr]tabs-4 text eol=lf whitespace=indent-with-non-tab,space-before-tab,tabwidth=4,trailing-space
+[attr]tabs-8 text eol=lf whitespace=indent-with-non-tab,space-before-tab,tabwidth=8,trailing-space
+
+[attr]vendored -diff -merge -text -whitespace
+
+# GitHub Linguist Languages
+# =========================
+
+# Text :: Data :: INI
+*.cfg linguist-language=INI
+*.ini linguist-language=INI
+
+# Text :: Data :: EditorConfig
+# Similar to INI group
+.editorconfig linguist-language=EditorConfig
+
+# Text :: Data :: TOML
+# Similar to INI group
+*.toml linguist-language=TOML
+
+# Text :: Data :: Ignore-List
+*.*ignore linguist-language=Ignore-List
+
+# Text :: Data :: JSON
+*.json linguist-language=JSON
+
+# Text :: Data :: XML
+*.xml linguist-language=XML
+*.ps1xml linguist-language=XML
+
+# Text :: Data :: YAML
+*.yaml linguist-language=YAML
+
+# Text :: Data :: Character Separated Values
+# Tabular data
+*.csv linguist-language=CSV
+*.tsv linguist-language=TSV
+
+# Text :: Markup
+*.css linguist-language=CSS
+*.html linguist-language=HTML
+*.jinja linguist-language=Jinja
+
+# Text :: Programming :: JavaScript
+*.js linguist-language=JavaScript
+
+# Text :: Programming :: Python
+*.py linguist-language=Python
+*.wsgi linguist-language=Python
+
+# Text :: Programming :: TCL
+*.tcl linguist-language=TCL
+
+# Text :: Programming :: Container
+*.Containerfile linguist-language=Dockerfile
+Containerfile linguist-language=Dockerfile
+Containerfile.* linguist-language=Dockerfile
+Containerfile-* linguist-language=Dockerfile
+
+*.Dockerfile linguist-language=Dockerfile
+Dockerfile linguist-language=Dockerfile
+Dockerfile.* linguist-language=Dockerfile
+Dockerfile-* linguist-language=Dockerfile
+
+# Text :: Programming :: Shell
+# These typically act as data files, but use shell syntax.
+.env linguist-language=Shell
+.env.* linguist-language=Shell
+.env-* linguist-language=Shell
+
+# Text :: Prose :: Markdown
+*.md linguist-documentation linguist-language=Markdown
+
+# Text :: Prose :: GetText-Catalog
+*.po linguist-language=GetText-Catalog
+*.pot linguist-language=GetText-Catalog
+
+# Text :: Prose :: reStructuredText
+*.rst linguist-documentation linguist-language=reStructuredText
+
+# git file-specific attributes
+# ============================
+
+* text=auto
+
+# Text :: Data :: Ignore-List
+# dockerignore / gitignore / etc
+.*ignore tabs-2
+# `.gitignore` inherits from the above, but don't export it in archives.
+.gitignore export-ignore
+
+# Text :: Data :: INI
+*.cfg tabs-2
+*.ini tabs-2
+.gitattributes tabs-2 export-ignore
+.gitconfig tabs-2 export-ignore
+.gitmodules tabs-2 export-ignore
+
+# Text :: Data :: EditorConfig
+# INI-like
+.editorconfig tabs-2 export-ignore
+
+# Text :: Data :: TOML
+*.toml tabs-2
+
+# Text :: Data :: JSON
+*.json spaces-4
+
+# Text :: Data :: XML
+*.ps1xml spaces-2
+*.xml spaces-2
+
+# Text :: Data :: YAML
+*.yaml spaces-4
+
+# Text :: Data :: Character Separated Values
+*.csv spaces-4
+*.tsv tabs-4
+
+# Text :: Markup :: CSS
+*.css spaces-2 diff=css
+
+# Text :: Markup :: HTML
+*.htm spaces-2
+*.html spaces-2 diff=html
+*.xhtml spaces-2
+
+# Text :: Markup :: Less
+*.less spaces-2
+
+# Text :: Markup :: Jinja2
+*.j2 spaces-2
+*.jinja spaces-2
+*.jinja2 spaces-2
+
+# Text :: Markup :: Rich Text Format
+*.rtf spaces-4
+
+# Text :: Markup :: SASS
+*.sass spaces-2
+
+# Text :: Markup :: SCSS
+*.scss spaces-2
+
+# Text :: Markup :: Svelte
+*.svelte spaces-2
+
+# Text :: Markup :: Vim Snippets
+*.snippets tabs-8
+
+# Text :: Markup :: Vue
+*.vue spaces-2
+
+# Text :: Programming :: Containerfile
+*.Containerfile spaces-4
+Containerfile spaces-4
+Containerfile.* spaces-4
+Containerfile-* spaces-4
+*.Dockerfile spaces-4
+Dockerfile spaces-4
+Dockerfile.* spaces-4
+Dockerfile-* spaces-4
+
+# Text :: Programming :: JavaScript
+*.js spaces-2
+
+# Text :: Programming :: PHP
+*.inc text diff=php spaces-2
+*.php text diff=php spaces-2
+
+# Text :: Programming :: Python
+*.py tabs-4 diff=python
+*.wsgi tabs-4 diff=python
+
+# Text :: Programming :: Shell :: Windows
+# These are explicitly windows files and should use crlf.
+*.bat tabs-4 eol=crlf
+*.ps1 tabs-4 eol=crlf
+*.psd1 tabs-4 eol=crlf
+*.psm1 tabs-4 eol=crlf
+
+# Text :: Programming :: Shell
+
+# Text :: Programming :: Shell Posix-compliant
+*.sh text tab-2
+.login tabs-2
+.profile tabs-2
+login tabs-2
+profile tabs-2
+
+# Text :: Programming :: Shell :: Bash
+*.bash diff=bash tabs-2
+.bash_* diff=bash tabs-2
+.bashrc diff=bash tabs-2
+bash_* diff=bash tabs-2
+bashrc diff=bash tabs-2
+
+# Text :: Programming :: Zsh
+.zshenv tabs-2
+.zshrc tabs-2
+*.zlogin tabs-2
+*.zlogout tabs-2
+*.zprofile tabs-2
+*.zsh tabs-2
+*.zsh-theme tabs-2
+*.zsh_* tabs-2
+
+# Text :: Programming :: Shell
+# Technically use shell syntax but act as data files
+.env tabs-2
+.env.* tabs-2
+.env-* tabs-2
+
+# Text :: Programming :: TCL
+*.tcl tabs-4
+
+# Text :: Programming :: SQL
+*.sql tabs-2
+
+# Text :: Programming :: vim
+*.vim tabs-2
+.vimrc tabs-2
+_vimrc tabs-2
+vimrc tabs-2
+
+# Text :: Prose :: Project Text
+
+AUTHORS text
+CHANGELOG text
+CHANGES text
+CONTRIBUTING text
+COPYING text
+*COPYRIGHT* text
+INSTALL text
+LICENSE text
+NEWS text
+*README* text
+TODO text
+
+# Text :: Prose :: GetText Catalog
+*.po prose-po
+*.pot prose-po
+
+# Text :: Prose :: Markdown
+*.md prose-md
+
+# Text :: Prose :: Plain Text
+*.txt spaces-4
+
+# Text :: Prose :: reStructuredText
+*.rst prose-rst
+
+# Misc Special Files
+# ==================
+
+.gdignore text eol=lf export-ignore
+.gitkeep text eol=lf export-ignore
+
+# Do not show locked files in diff
+*.lock -diff eol=lf text
+
+# Source maps should be ignored.
+*.css.map vendored
+*.js.map vendored
+
+# Binary
+# ======
+
+# Binary :: Archives
+# It's better to unpack these files and commit the raw source because
+# git has its own built in compression methods.
+*.7z binary
+*.jar binary
+*.rar binary
+*.zip binary
+*.gz binary
+*.gzip binary
+*.tgz binary
+*.bzip binary
+*.bzip2 binary
+*.bz2 binary
+*.xz binary
+*.lzma binary
+*.cab binary
+*.xar binary
+
+# Packing-only formats
+*.iso binary
+*.tar binary
+
+# Package management formats
+# Binary :: Package Management :: macOS
+*.dmg binary
+
+# Binary :: Package Management :: Mozilla XPIInstall
+*.xpi binary
+
+# Binary :: Package Management :: Ruby
+*.gem binary
+
+# Binary :: Package Management :: Python
+*.egg binary
+
+# Binary :: Package Management :: Debian
+*.deb binary
+
+# Binary :: Package Management :: Red Hat
+*.rpm binary
+
+# Binary :: Package Management :: Windows
+*.msi binary
+*.msm binary
+*.msp binary
+
+# Binary :: Audio Files
+*.kar binary
+*.m4a binary
+*.mid binary
+*.midi binary
+*.mp3 binary
+*.ogg binary
+*.ra binary
+
+# Binary :: Documents
+*.doc diff=astextplain
+*.docx diff=astextplain
+*.dot diff=astextplain
+*.pdf diff=astextplain
+*.rtf diff=astextplain
+
+# Binary :: Graphics Files
+# SVG treated as text by default, but are rarely edited by hand, so ignoring them in diffs is sensible.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.tif binary
+*.tiff binary
+*.ico binary
+*.svg binary
+*.eps binary
+
+# Binary :: Python
+*.pkl binary
+*.pickle binary
+*.pyc binary export-ignore
+*.pyo binary export-ignore
+*.pyd binary
+
+# Binary :: Video
+*.3gpp binary
+*.3gp binary
+*.as binary
+*.asf binary
+*.asx binary
+*.avi binary
+*.fla binary
+*.flv binary
+*.m4v binary
+*.mng binary
+*.mov binary
+*.mp4 binary
+*.mpeg binary
+*.mpg binary
+*.ogv binary
+*.swc binary
+*.swf binary
+*.webm binary

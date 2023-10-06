@@ -1,0 +1,157 @@
+# vim: ft=dosini
+# .editorconfig
+# https://www.editorconfig.org/
+
+# Options
+# =======
+
+# root                     = true/false
+# charset                  = latin1/utf-8/utf8-bom/utf-16be/utf-16le
+# end_of_line              = cr/lf/crlf
+# indent_size              = uint
+# indent_style             = tab/space
+# insert_final_newline     = true/false
+# tab_width                = indent_size/uint
+# trim_trailing_whitespace = true/false
+
+root = true
+
+# Default Settings
+# ================
+
+# Unix-style newlines with a newline ending every file.
+# To be safe, spaces / tabs should be set per filetype
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Settings
+# ========
+
+# Text :: Data :: Diff
+[*.{diff,patch}]
+trim_trailing_whitespace = false
+
+# Text :: Data :: INI
+[*.{cfg,ini}]
+indent_size = 2
+indent_style = tab
+tab_width = 2
+
+# Text :: Data :: Character Separated Values
+[*.{csv,tsv}]
+indent_style = tab
+indent_size = 4
+insert_final_newline = false
+tab_width = 4
+
+# Text :: Data :: JSON
+[*.json]
+indent_size = 4
+indent_style = space
+tab_width = 4
+
+# Text :: Data :: TOML
+[*.toml]
+indent_size = 2
+indent_style = tab
+tab_width = 2
+
+# Text :: Data :: YAML
+[*.yaml]
+indent_size = 2
+indent_style = space
+tab_width = 2
+
+# Text :: Data :: XML
+[*.xml]
+indent_size = 2
+indent_style = space
+tab_width = 2
+
+# Text :: Data :: PowerShell XML
+[*.ps1xml]
+end_of_line = crlf
+indent_size = 2
+indent_style = space
+tab_width = 2
+
+# Text :: Markup :: Vim Snippets
+[*.snippets]
+indent_size = 8
+indent_style = tab
+tab_width = 8
+
+# Text :: Programming :: Shell
+[*.sh]
+indent_size = 2
+indent_style = tab
+tab_width = 2
+
+[{.login,.profile,login,profile}]
+indent_size = 2
+indent_style = tab
+tab_width = 2
+
+# Text :: Programming :: bash
+# Shell :: Linux :: Bash
+[*.bash]
+indent_size = 2
+indent_style = tab
+tab_width = 2
+
+[{.bash_aliases,.bash_functions,.bash_logout,.bash_profile,.bashrc}]
+indent_size = 2
+indent_style = tab
+tab_width = 2
+
+[{bash_aliases,bash_functions,bash_logout,bash_profile,bashrc}]
+indent_size = 2
+indent_style = tab
+tab_width = 2
+
+# Text :: Programming :: PowerShell
+[*.ps1]
+end_of_line = crlf
+indent_size = 4
+indent_style = tab
+tab_width = 4
+
+# Text :: Programming :: PowerShell Modules
+[*.{psd1,psm1}]
+end_of_line = crlf
+indent_size = 4
+indent_style = tab
+tab_width = 4
+
+# Text :: Programming :: Python
+[*.py]
+indent_size = 4
+indent_style = tab
+tab_width = 4
+
+# Text :: Programming :: WSGI
+# Similar to python
+[*.wsgi]
+indent_size = 4
+indent_style = tab
+tab_width = 4
+
+# Text :: Programming :: vim
+[*.vim]
+indent_size = 2
+indent_style = tab
+tab_width = 2
+
+[{.vimrc,_vimrc,vimrc}]
+indent_size = 2
+indent_style = tab
+tab_width = 2
+
+[requirements.txt]
+trim_trailing_whitespace = false
+
+[COMMIT_EDITMSG]
+max_line_length = 72
