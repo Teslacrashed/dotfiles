@@ -25,6 +25,8 @@ tests/
 
 # SQL :: sqlite3
 # SQLite3 files
+# `.db` is a commonly used file extension, it could be a text file
+# it could be a binary file of another type.
 *.db
 *.sqlite
 *.sqlite-journal

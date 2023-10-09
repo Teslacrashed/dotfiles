@@ -128,14 +128,14 @@ Dockerfile-* linguist-language=Dockerfile
 *.json spaces-4
 
 # Text :: Data :: XML
-*.ps1xml spaces-2
 *.xml spaces-2
+*.ps1xml spaces-2
 
 # Text :: Data :: YAML
 *.yaml spaces-4
 
 # Text :: Data :: Character Separated Values
-*.csv spaces-4
+*.csv tabs-4
 *.tsv tabs-4
 
 # Text :: Markup :: CSS
@@ -274,7 +274,12 @@ TODO text
 # Misc Special Files
 # ==================
 
+# Text :: Data :: Godotignore
+# This tells the Godot Editor to ignore a folder.
 .gdignore text eol=lf export-ignore
+
+# Text :: Data :: Gitkeep
+# This tells git to keep a folder in the repo even if there are no files / or all files are ignored.
 .gitkeep text eol=lf export-ignore
 
 # Do not show locked files in diff
