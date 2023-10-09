@@ -1,11 +1,12 @@
+# .gitignore
 # vim: ft=gitignore
+# https://git-scm.com/docs/gitignore
 
 # File and Folder Ignore List
 
 # Project :: General
-# I like to store various files / notes / old code in the attic.
+# Store various files / notes / old code in the attic that aren't desirable to have in the repo.
 [Aa]ttic/
-tests/
 
 # Project :: Logs
 [Ll]ogs/
