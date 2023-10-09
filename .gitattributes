@@ -203,7 +203,7 @@ Dockerfile-* spaces-4
 # Text :: Programming :: Shell
 
 # Text :: Programming :: Shell Posix-compliant
-*.sh text tab-2
+*.sh text tabs-2
 .login tabs-2
 .profile tabs-2
 login tabs-2
