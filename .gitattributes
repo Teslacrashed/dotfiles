@@ -22,6 +22,8 @@
 [attr]tabs-4 text eol=lf whitespace=indent-with-non-tab,space-before-tab,tabwidth=4,trailing-space
 [attr]tabs-8 text eol=lf whitespace=indent-with-non-tab,space-before-tab,tabwidth=8,trailing-space
 
+# Basically identical to binary, but useful for notating files that come from other entities
+# and not from the contributors of the repo.
 [attr]vendored -diff -merge -text -whitespace
 
 # GitHub Linguist Languages
